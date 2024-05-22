@@ -1,45 +1,70 @@
-.landing-page{
+section{
+    margin-bottom: -190px;
+    position:sticky;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .section{
+    background-color: rgba(219, 252, 255, 1);
+    align-items: center;}
+  
+  .navbar{
+    display: flex;
+    padding-top:40px;
+    justify-content: space-evenly;
+    font-size: large;
+    color:rgba(7, 110, 116, 1);
+  }
+  
+  .logo{
+    padding-right:200px;
+    padding-left:5px;
+    padding-top:-30px;
+  }
+  body{
+    overflow: hidden;
+  }
+    /*landing page CSS*/
+  .landing-page{
     overflow: hidden;
     margin-top:-100px;
-}
-
-body {
-    margin: 0;
+  }
+  
+  body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     box-sizing: border-box;
-}
-
-.hero-section {
+  }
+  
+  .hero-section {
     height: 100vh;
     padding-top: 15rem;
     background-color: rgba(219, 252, 255, 1);
     z-index: -1;
-}
-.hero-section .flex-hero {
+  }
+  .hero-section .flex-hero {
     flex-direction: column;
     gap: 30px;
     text-align:center;
-}
-
-.hero-section .flex-hero h1 {
+  }
+  
+  .hero-section .flex-hero h1 {
     font-size: 65px;
     font-weight: 900;
-}
-.text-gradient {
+  }
+  .text-gradient {
     background: linear-gradient(45deg,rgba(57, 232, 219, 1) 2.34%,rgba(32, 130, 123, 1) 100.78%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-.hero-section h4 {
+  }
+  .hero-section h4 {
     font-size: 22px;
     font-weight: 300;
     text-align: center;
     padding: 12px 14rem;
     color:#969BA5;
-}
-
-.hero-section .button {
+  }
+  
+  .hero-section .button {
     padding: 0.7rem 2rem;
     border-radius: 25px;
     background-color:rgba(79, 171, 177, 0.64);
@@ -48,68 +73,62 @@ body {
     width: 15%;
     margin-top:15px;
     text-align: center;
-}
-
-.hero-section div:nth-child(2) {
+  }
+  
+  .hero-section div:nth-child(2) {
     margin-top: 4rem;
-}
-
-.hero-section .image {
+  }
+  
+  .hero-section .image {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0px;
-}
-
-.cross{
+  }
+  
+  .cross{
     margin-top: -80px;
-}
-
-
-ul {
+  }
+  
+  
+  ul {
     list-style: none;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: #333;
-}
-
-h1,
-h2 {
+  }
+  
+  h1,
+  h2 {
     line-height: 1;
     margin: 15px 0;
     font-size:smaller;
-}
-h4 {
+    margin-top:150px;
+  }
+  h4 {
     background-color: rgba(219, 252, 255, 1);
     margin-bottom: 5px;
     margin-top: 5px;
-}
-
-.startbutton{
-    background-color: rgba(219, 252, 255, 1);}
-
-
-button {
-    transition: all 0.5s ease-in-out;
+  }
+  button {
     font-size: 1em;
-    width: 100%;
-    border-radius: 5px;
+    width: 200%;
+    border-radius: 20px;
     text-align: center;
-    margin-top: -20px;
-    max-width: 600px;
-}
-
-
-.button:hover {
+    padding-left:-20px;
+  }
+  
+  
+  .button:hover {
     transform: scale(0.98);
-}
-button,
-a,
-li {
+  }
+  button,
+  a,
+  li {
     cursor: pointer;
-}
+  }
   
   
   @keyframes blobani {
