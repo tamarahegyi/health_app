@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 export default function SignUp(){
     return (<>
         <nav className="Nav">
@@ -47,7 +48,7 @@ export default function SignUp(){
                     </div>
                     <div class="form-group">
                         <label class="phone-number" for="phone">Phone</label>
-                        <input type="number" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
+                        <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter 10 numbers between 0-9" name="phone" id="phone" required class="form-control" placeholder="Enter your phone number" aria-describedby="helpId" />
                     </div>
                     <div class="form-group">
                         <label class="email-address" for="email">Email</label>
