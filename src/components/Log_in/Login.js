@@ -15,16 +15,14 @@ export default function Login(){
         <a className="appointments" href="../Search-Page/SearchPage.html"> Appointments <span></span>
         <i class="fa fa-search" aria-hidden="true"></i></a>
 
-        <a className="health-blog" href="#"> Health Blog <span></span>
+        <a className="health-blog"href="#"> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
-        
+
         <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
 
           <a href="/Login">
           <button class="btn1" className="login" type="button"> Log in</button></a>
-
-        
           <a href="/SignUp">
           <button class="btn2" className="signup"type="button"> Sign up</button></a>
       </nav>
@@ -57,9 +55,9 @@ export default function Login(){
                                     aria-describedby="helpId" />
                             </div>
 
-                            <div className="btn-group">
-                                <button class="login" type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">Login</button>
-                                <button class="reset" type="reset" className="btn btn-danger mb-2 waves-effect waves-light">Reset</button>
+                            <div>
+                                <button className="log-in" type="submit">Login</button>
+                                <button className="reset" type="reset">Reset</button>
                             </div>
                             <br />
                             <div className="login-text">

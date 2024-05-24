@@ -1,4 +1,5 @@
 import React, {Component} from "react"
+import { Link } from "react-router-dom"
 
 export default function Navbar(){
     return (
@@ -17,14 +18,13 @@ export default function Navbar(){
 
         <a className="health-blog"href="#"> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
-        
-        <a class="reviews" className="active" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
-        <i class="fa fa-book" aria-hidden="true"></i></a>
 
-          <a href="/Login">
-          <button class="btn1" className="login" type="button"> Log in</button></a>
-          <a href="/SignUp">
-          <button class="btn2" className="signup"type="button"> Sign up</button></a>
+        <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
+        <i class="fa fa-book" aria-hidden="true"></i></a>
+        <a href="/Login">
+        <button class="btn1" className="login" type="button"> Log in</button></a>
+        <a href="/SignUp">
+        <button class="btn2" className="signup"type="button"> Sign up</button></a>
       </nav>
     </section>
   </div>
