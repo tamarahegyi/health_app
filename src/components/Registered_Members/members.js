@@ -1,8 +1,18 @@
-import React, {Component} from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { useEffect } from "react";
+import Sign_Up from "../Sign_up/SignUp";
 
-export default function Navbar(){
-    return (
+const logout=()=>{
+    localStorage.removeItem("signUp")
+    window.location.reload()
+}
+const deleteAccount=()=>{
+    localStorage.clear("signUp")
+    window.location.reload()
+}
+
+export default function Members(){
+    return(
     <nav className="Nav">
     <div>
     <section className="section">
@@ -21,10 +31,11 @@ export default function Navbar(){
 
         <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
+
         <a href="/Login">
-        <button class="btn1" className="login" type="button"> Log in</button></a>
-        <a href="/SignUp">
-        <button class="btn2" className="signup"type="button"> Sign up</button></a>
+        <button class="btn1" className="login" type="button" onClick={logout}> Log out</button></a>
+        
+        <button className="logout" type="button" onClick={deleteAccount}> Delete Account</button>
       </nav>
     </section>
   </div>
@@ -41,7 +52,7 @@ export default function Navbar(){
           <h4>
             “Primum non nocere” <br></br>“First do no harm”</h4>
         </div>
-        <a href="/Login"><button className ="startbutton" type="button"> Let's start
+        <a href="/Appointments"><button className ="startbutton" type="button"> Book an appointment
         </button>
         </a>
     </div>
