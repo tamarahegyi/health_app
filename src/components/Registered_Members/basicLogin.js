@@ -1,36 +1,10 @@
-import React, {Component, useRef, useEffect, useState} from "react";
-import { Link, Navigate } from 'react-router-dom';
-import Members from "../Registered_Members/members";
+import React, { useEffect, useRef, useState } from "react";
 
-const Log_in=()=>{
-  const email=useRef()
-  const password=useRef()
-  const[showHome,setShowHome]= useState(false)
-  const[show,setShow]= useState(false)
-  const localEmail=localStorage.getItem("email")
-  const localPassword=localStorage.getItem("password")
+const newMemberLogin =()=>{
 
-  useEffect(()=>{
-    if(localEmail){
-      setShowHome(true)
-    }
-    if(localPassword){
-      setShow(true)
-    }
-  })
-
-  const handleLogin=()=>{
-    if(email.current.value==localEmail&&password.current.value==localPassword){
-        localStorage.setItem("signUp",email.current.value)
-        window.location.reload();
-    }
-    else
-        alert("It seems like you are not a member yet? Please sign up")
-    }
-
-return(
-<div> {showHome?<Members/>:
-<nav className="Nav">
+return(<>
+  <div>
+  <nav className="Nav">
     <div>
     <section className="section">
       <nav className="navbar">
@@ -49,10 +23,10 @@ return(
         <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
         <i className="fa fa-book" aria-hidden="true"></i></a>
 
-          <a href="/">
-          <button className="login" type="button"> Log in</button></a>
+          <a href="/Login">
+          <button className="login" id="button"type="button"> Log in</button></a>
           <a href="/SignUp">
-          <button className="signup"type="button"> Sign up</button></a>
+          <button className="signup"type="button" id="button"> Sign up</button></a>
       </nav>
     </section>
   </div>
@@ -70,10 +44,10 @@ return(
                         <form>
                             <div className="form-group">
                                 <label className="email" for="email">Email</label>
-                                <input required ref={email} type="email" name="email" id="email" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
+                                <input required type="email" name="email" id="input" className="form-control" placeholder="Enter your email" aria-describedby="helpId" />
                             </div>
                             <div className="form-group">
-                                <label required ref={password}className="password" for="password">Password</label>
+                                <label required className="password" id="input" for="password">Password</label>
                                 <input
                                     type="password"
                                     name="password"
@@ -84,8 +58,8 @@ return(
                             </div>
 
                             <div>
-                                <button className="log-in" type="submit"onClick={handleLogin}>Login</button>
-                                <button className="reset" type="reset">Reset</button>
+                               <a href="/SignUp"> <button className="log-in" type="submit" id="button">Login</button></a>
+                                <button className="reset" type="reset" id="button">Reset</button>
                             </div>
                             <br />
                             <div className="login-text">
@@ -95,9 +69,7 @@ return(
                     </div>
                 </div>
             </div>
-    </nav>}
-  </div>
-  );
-    }
-
-    export default Log_in;
+    </nav>
+  </div></>)
+}
+export default newMemberLogin;
