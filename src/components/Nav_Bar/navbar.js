@@ -41,7 +41,7 @@ const navbar =()=>{
           <h4>
             “Primum non nocere” <br></br>“First do no harm”</h4>
         </div>
-        <a href="/Login"><button className ="startbutton" type="button"> Let's start
+        <a href="/basicLogin"><button className ="startbutton" type="button"> Let's start
         </button>
         </a>
     </div>

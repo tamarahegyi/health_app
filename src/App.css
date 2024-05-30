@@ -49,6 +49,18 @@ width:10%;
 .signup{
   margin-right:-100px;
   margin-top:5px;
+  width:10%;
+}
+.signupBasic{
+  width:15%;
+  margin-left:100px;
+}
+.btn1, .btn2{
+  width:10%;
+  margin-left:50px;
+}
+.btn1{
+  margin-left:50px;
 }
 
   /*landing page CSS*/

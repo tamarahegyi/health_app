@@ -1,5 +1,4 @@
 import React from "react";
-import Logout from "./basicLogin";
 import { useNavigate } from "react-router-dom";
 
 const members = ()=>{
@@ -36,8 +35,8 @@ const deleteAccount=()=>{
 
         <a href="/navbar">
         <button className="login" type="button" id="logout" onClick={logout} > Log out</button></a>
-        
-        <button className="signup" type="button" onClick={deleteAccount}> Delete Account</button>
+        <a href="/SignUp">
+        <button className="signup" type="button" onClick={deleteAccount}> Delete Account</button></a>
       </nav>
     </section>
   </div>
