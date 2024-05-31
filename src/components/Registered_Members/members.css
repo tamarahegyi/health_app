@@ -1,0 +1,280 @@
+section{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top:20px;
+    overflow: hidden;
+  }
+  
+  .section{
+    align-items: center;}
+  
+  .navbar{
+    padding-top:10px;
+    justify-content:space-between;
+    font-size:large;
+    display:inline;
+  }
+  a:hover{
+    color:rgba(219, 252, 255, 1);
+  }
+  .home{
+    margin-right:30px;
+    color:white;
+  }
+  .appointments{
+    margin-right:30px;
+    color:white;
+  }
+  .health-blog{
+    margin-right:30px;
+    color:white;
+  }
+  .logo{
+    padding-right:360px;
+    padding-left:30px;
+    font-size: x-large;
+    color:white;
+  }
+  .reviews{
+    color:white;
+  }
+  
+  .login, .signup{
+  float: inline-end;
+  width:10%;
+  }
+  .login{
+    margin-right:5px;
+    margin-top:5px;
+    border-radius: 30%;
+  }
+  .login:hover{
+    background-color: white;
+    color:rgba(7, 110, 116, 1);
+  }
+  .signup:hover{
+    background-color: rgba(79, 171, 177, 0.64);
+    color:white;
+  }
+  .signup{
+    margin-right:-100px;
+    margin-top:5px;
+    width:10%;
+    border-radius: 30%;
+    background-color: white;
+    color:rgba(7, 110, 116, 1);
+  }
+  .signupBasic{
+    width:15%;
+    margin-left:100px;
+  }
+  .btn1, .btn2{
+    width:10%;
+    margin-left:50px;
+  }
+  .btn1{
+    margin-left:50px;
+  }
+  
+    /*landing page CSS*/
+  .hero-section {
+    height: 70vh;
+    padding-top: 10rem;
+    background-color: rgba(219, 252, 255, 1);
+    z-index: -1;
+    margin-top:-20px;
+  }
+  .hero-section .flex-hero {
+    flex-direction: column;
+    gap: 30px;
+    text-align:center;
+  }
+  
+  .hero-section .flex-hero h1 {
+    font-size: 65px;
+    font-weight: 900;
+  }
+  .text-gradient {
+    background: linear-gradient(45deg,rgba(57, 232, 219, 1) 2.34%,rgba(32, 130, 123, 1) 100.78%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top:50px;
+  }
+  .hero-section h4 {
+    font-size: 22px;
+    font-weight: 300;
+    text-align: center;
+    padding: 12px 14rem;
+    color:#969BA5;
+  }
+  
+  .hero-section .button {
+    text-align: center;
+  }
+  
+  .hero-section div:nth-child(2) {
+    margin-top: 4rem;
+  }
+  
+  .hero-section .image {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+  }
+  
+  .cross{
+    margin-top: -80px;
+  }
+  
+  
+  ul {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  h1,
+  h2 {
+    line-height: 1;
+    margin: 15px 0;
+    font-size:larger;
+    margin-top: -50px;
+  }
+  h4 {
+    background-color: rgba(219, 252, 255, 1);
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  button {
+    width:30%;
+    font-size: 1em;
+    text-align: center;
+    justify-content: space-between;
+    border: none;
+    color:rgba(7, 110, 116, 1);
+    font-weight: bold;
+  }
+  button,
+  a,
+  li {
+    cursor: pointer;
+  }
+  
+  .startbutton{
+    width: 30%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    background-color: #076e74;
+    color:white;
+    border:none;
+    height: 50px;
+    font-size: large;
+    border-radius: 30%;
+  }
+  .startbutton:hover{
+    background-color: rgba(79, 171, 177, 0.64);
+    color:#076e74;
+  }
+  
+  /* This is the CSS for the Login form*/
+  body{
+    background-color: #076e74;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+  }
+  
+  .container {
+    margin-top: 10%;
+    text-align: center;
+    width:100%;
+  } 
+  .form-group {
+    width:50%;
+    display:block;
+    margin:auto;
+    margin-bottom:20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: justify;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .login {
+    color: #fff;
+    margin-left:150px;
+    margin-right:50px;
+    background-color: rgba(79, 171, 177, 0.64);
+  }
+  
+  .reset {
+    background-color: rgba(241, 155, 155, 1);
+    color: #fff;
+    margin-right: 250px;
+    height: 40px;
+    width:20%;
+    margin-left:150px;
+  }
+  .reset:hover{
+    background-color: rgba(177, 79, 85, 0.89)
+  }
+  .log-in{
+    background-color: rgba(79, 171, 177, 0.64);
+    color:white;
+    margin-left:250px;
+    width:20%;
+    height: 40px;
+  }
+  .log-in:hover{
+    background-color: rgba(79, 171, 177, 0.34);
+  }
+  .reset-signup{
+    background-color: rgba(241, 155, 155, 1);
+    color: #fff;
+    margin-right: 250px;
+    height: 40px;
+    width:20%;
+    margin-left:150px;
+  }
+  
+  .reset-signup:hover{
+    background-color: rgba(177, 79, 85, 0.89);
+  }
+  
+  .submit-signup{
+    background-color: rgba(79, 171, 177, 0.64);
+    color:white;
+    margin-left:250px;
+    width:20%;
+    height: 40px;
+  }
+  .submit-signup:hover{
+    background-color: rgba(79, 171, 177, 0.34);
+  }
+  .signup-text{
+    font-size:large;
+  }
+  
+  
+  @keyframes blobani {
+    0% {top: 0; left: 0; transform: scale(1);}
+    30% {top: 0; left: 0; transform: scale(1.2);}
+    60% {top: 0; left: 0; transform: scale(1.3);}
+    100% {top: 0; left: 0; transform: scale(1);}
+  }

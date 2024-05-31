@@ -13,10 +13,10 @@ const navbar =()=>{
           <a className="home" href="./navbar"> Home <span></span>
           <i class="fa fa-home" aria-hidden="true"></i></a>
 
-        <a className="appointments" href="../Search-Page/SearchPage.html"> Appointments <span></span>
+        <a className="appointments" href="/basicLogin"> Appointments <span></span>
         <i class="fa fa-search" aria-hidden="true"></i></a>
 
-        <a className="health-blog"href="#"> Health Blog <span></span>
+        <a className="health-blog"href="/basicLogin"> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
 
         <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>

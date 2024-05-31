@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Members from "../Registered_Members/members";
+import './/SignUp.css'
 
 const Sign_Up = () => {
   const nameRef = useRef();
@@ -44,7 +45,7 @@ const Sign_Up = () => {
 
     if (user && user.password === password) {
       localStorage.setItem("signUp", email);
-      window.location.reload();
+      window.location.href="/members";
     } else {
       alert("It seems like you are not a member yet? Please sign up");
     }
@@ -171,9 +172,9 @@ const Sign_Up = () => {
                     />
                   </div>
                   <div className="btn-group">
-                    <button className="submit-signup" type="button" onClick={handleLogin}>
+                    <a href="/members"><button className="submit-signup" type="button" onClick={handleLogin}>
                       Submit
-                    </button>
+                    </button></a>
                     <button className="reset-signup" type="reset">
                       Reset
                     </button>

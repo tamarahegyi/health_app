@@ -1,6 +1,5 @@
 section{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  margin: auto;
   margin-top:20px;
 }
 
@@ -45,11 +44,23 @@ width:10%;
 .login{
   margin-right:5px;
   margin-top:5px;
+  border-radius: 30%;
+}
+.login:hover{
+  background-color: white;
+  color:rgba(7, 110, 116, 1);
+}
+.signup:hover{
+  background-color: rgba(79, 171, 177, 0.64);
+  color:white;
 }
 .signup{
   margin-right:-100px;
   margin-top:5px;
   width:10%;
+  border-radius: 30%;
+  background-color: white;
+  color:rgba(7, 110, 116, 1);
 }
 .signupBasic{
   width:15%;
@@ -65,10 +76,11 @@ width:10%;
 
   /*landing page CSS*/
 .hero-section {
-  height: 100vh;
-  padding-top: 15rem;
+  height: 70vh;
+  padding-top: 10rem;
   background-color: rgba(219, 252, 255, 1);
   z-index: -1;
+  margin-top:-20px;
 }
 .hero-section .flex-hero {
   flex-direction: column;
@@ -85,6 +97,7 @@ width:10%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  margin-top:50px;
 }
 .hero-section h4 {
   font-size: 22px;
@@ -138,7 +151,6 @@ h4 {
 button {
   width:30%;
   font-size: 1em;
-  border-radius: 20px;
   text-align: center;
   justify-content: space-between;
   border: none;
@@ -152,7 +164,7 @@ li {
 }
 
 .startbutton{
-  width: 20%;
+  width: 30%;
   text-align: center;
   display: block;
   margin: auto;
@@ -161,13 +173,17 @@ li {
   border:none;
   height: 50px;
   font-size: large;
+  border-radius: 30%;
+}
+.startbutton:hover{
+  background-color: rgba(79, 171, 177, 0.64);
+  color:#076e74;
 }
 
 /* This is the CSS for the Login form*/
 body{
   background-color: #076e74;
   color:white;
-  overflow: hidden;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: large;
 }
@@ -213,7 +229,9 @@ body{
   height: 40px;
   width:20%;
   margin-left:150px;
-
+}
+.reset:hover{
+  background-color: rgba(177, 79, 85, 0.89)
 }
 .log-in{
   background-color: rgba(79, 171, 177, 0.64);
@@ -221,6 +239,9 @@ body{
   margin-left:250px;
   width:20%;
   height: 40px;
+}
+.log-in:hover{
+  background-color: rgba(79, 171, 177, 0.34);
 }
 .reset-signup{
   background-color: rgba(241, 155, 155, 1);
@@ -231,6 +252,10 @@ body{
   margin-left:150px;
 }
 
+.reset-signup:hover{
+  background-color: rgba(177, 79, 85, 0.89);
+}
+
 .submit-signup{
   background-color: rgba(79, 171, 177, 0.64);
   color:white;
@@ -238,7 +263,9 @@ body{
   width:20%;
   height: 40px;
 }
-
+.submit-signup:hover{
+  background-color: rgba(79, 171, 177, 0.34);
+}
 .signup-text{
   font-size:large;
 }

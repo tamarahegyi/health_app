@@ -1,16 +1,20 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useRef } from "react-router-dom";
+import FindDoctorSearchIC from "../InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC";
+import './/members.css'
 
 const members = ()=>{
+  const localUsers = JSON.parse(localStorage.getItem("users")) || {};
 
   const logout=()=>{
     localStorage.removeItem("signUp")
     window.location.reload()
 }
 const deleteAccount=()=>{
-    localStorage.clear("signUp")
-    window.location.reload()
+  localStorage.clear("signUp")
+  window.location.reload()
 }
+
   
     return(<>
 <div>
@@ -21,10 +25,9 @@ const deleteAccount=()=>{
           <a className="logo"> HealthGuard <span></span>
           <i className="fa fa-tint" aria-hidden="true"></i></a>
 
-          <a className="home" href="./navbar"> Home <span></span>
+          <a className="home" href="./members"> Home <span></span>
           <i className="fa fa-home" aria-hidden="true"></i></a>
-
-        <a className="appointments" href="../Search-Page/SearchPage.html"> Appointments <span></span>
+        <a className="appointments" href="/FindDoctorSearchIC"> Appointments <span></span>
         <i className="fa fa-search" aria-hidden="true"></i></a>
 
         <a className="health-blog"href="#"> Health Blog <span></span>
@@ -36,7 +39,7 @@ const deleteAccount=()=>{
         <a href="/navbar">
         <button className="login" type="button" id="logout" onClick={logout} > Log out</button></a>
         <a href="/SignUp">
-        <button className="signup" type="button" onClick={deleteAccount}> Delete Account</button></a>
+        <button className="signup" type="button" onClick={deleteAccount}> Your Profile</button></a>
       </nav>
     </section>
   </div>
