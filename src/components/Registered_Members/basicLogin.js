@@ -7,6 +7,8 @@ const Log_in = () => {
   const [showHome, setShowHome] = useState(false);
   const [show, setShow] = useState(false);
 
+  const localUsers = JSON.parse(localStorage.getItem("users")) || {};
+
   useEffect(() => {
     const localEmail = localStorage.getItem("email");
     const localPassword = localStorage.getItem("password");
@@ -22,11 +24,13 @@ const Log_in = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const localEmail = localStorage.getItem("email");
-    const localPassword = localStorage.getItem("password");
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const user = localUsers[email];
+    
 
-    if (emailRef.current.value === localEmail && passwordRef.current.value === localPassword) {
-      localStorage.setItem("signUp", emailRef.current.value);
+    if (user && user.password === password) {
+      localStorage.setItem("signUp", email);
       window.location.reload();
     } else {
       alert("Please use valid credentials!");
@@ -57,9 +61,10 @@ const Log_in = () => {
                 <a className="reviews" href="../Review_Page/ReviewPage.html">
                   Reviews <i className="fa fa-book" aria-hidden="true"></i>
                 </a>
+                <a href="/members">
                 <button className="login" type="button" onClick={handleLogin}>
                   Log in
-                </button>
+                </button></a>
                 <a href="/SignUp">
                   <button className="signup" type="button">
                     Sign up
