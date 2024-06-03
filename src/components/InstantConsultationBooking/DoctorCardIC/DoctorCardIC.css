@@ -1,31 +1,45 @@
 .doctor-card-container {
     width: 300px;
     height: 100%;
-    border: 1px solid #ccc;
+    border: 3px solid rgba(59, 165, 171, 0.89);
     border-radius: 8px;
     overflow: hidden;
     display: inline-block;
     margin: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    background-color: rgba(95, 142, 145, 1);
   }
   .cancel-appointment {
-    background-color: red;
+    background-color:rgba(177, 79, 85, 0.64);
   }
-  
+  .cancelAppointment{
+    background-color: #d63027;
+    margin-left:225px;
+  }
+  .booking-name{
+    text-align: center;
+  }
+
+  .booking-number{
+    text-align: center;
+  }
+
   .doctor-card-details-container {
     padding: 20px;
   }
   
   .doctor-card-profile-image-container {
     text-align: center;
-    margin-bottom: 10px;
+    margin-top:10px;
+    margin-bottom:10px;
   }
   
   .doctor-card-profile-image-container img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    margin-bottom:20px;
   }
   
   .doctor-card-details {
@@ -36,19 +50,22 @@
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
+    color:white;
   }
   
   .doctor-card-detail-speciality {
     font-size: 16px;
     margin-bottom: 5px;
+    color:white;
   }
   
   .doctor-card-detail-experience {
     font-size: 14px;
-    color: #888;
     margin-bottom: 5px;
     font-weight: bold;
+    color:white;
   }
+
   
   .doctor-card-detail-location,
   .doctor-card-detail-clinic,
@@ -62,7 +79,6 @@
   }
   
   .book-appoinment-btn {
-    background-color: #3498db;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -74,6 +90,7 @@
   .book-appoinment-btn div:nth-child(2) {
     font-size: 12px;
     font-weight: bold;
+    background-color: rgba(10, 101, 107, 1);
   }
   .modal-container {
   position: fixed;
@@ -85,6 +102,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.submit{
+  margin-left:120px;
 }
 
 .modal-content {
@@ -115,13 +135,14 @@
   transition: background-color 0.3s ease;
 }
 .doctorbg{
-  -webkit-scrollbar {
-    display: none;
-}
-
-
+background-color: rgba(53, 158, 163, 1);
+padding-top:40px;
 
 }
+.booked-appointment{
+  margin-top:70px;
+}
+
 .modal-btn:hover {
   background-color: #0d8af5;
 }
@@ -171,16 +192,18 @@ textarea {
 
 button {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: rgba(53, 158, 163, 1);
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
+width:40%;
+margin-bottom:10px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: rgba(172, 204, 206, 1);
 }
 
 

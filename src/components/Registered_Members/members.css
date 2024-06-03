@@ -144,6 +144,9 @@ section{
     font-size:larger;
     margin-top: -50px;
   }
+  .welcome{
+  color:#076e74;
+  }
   h4 {
     background-color: rgba(219, 252, 255, 1);
     margin-bottom: 5px;
@@ -195,7 +198,7 @@ section{
     width:100%;
   } 
   .form-group {
-    width:50%;
+    width:90%;
     display:block;
     margin:auto;
     margin-bottom:20px;

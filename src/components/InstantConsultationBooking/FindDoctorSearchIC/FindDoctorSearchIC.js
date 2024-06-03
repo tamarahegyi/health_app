@@ -18,30 +18,33 @@ const FindDoctorSearchIC = () => {
         navigate(`/instant-consultation?speciality=${speciality}`);
         window.location.reload();
     }
-    return (
+
+    const logout=()=>{
+        localStorage.removeItem("signUp")
+        window.location.reload()
+    }
+    return (<>
         <div className='page'>
             <nav className="Nav">
     <div>
     <section className="section">
       <nav className="navbar">
-          <a className="logo"> HealthGuard <span></span>
+          <a className="logo" style={{color:'rgba(7, 110, 116, 1)'}}> HealthGuard <span></span>
           <i className="fa fa-tint" aria-hidden="true"></i></a>
 
-          <a className="home" href="./navbar"> Home <span></span>
+          <a className="home" href="/members" style={{color:'rgba(7, 110, 116, 1)'}}> Home <span></span>
           <i class="fa fa-home" aria-hidden="true"></i></a>
 
-        <a className="appointments" href="/basicLogin"> Appointments <span></span>
+        <a className="appointments" href="./FindDoctorSearchIC" style={{color:'rgba(7, 110, 116, 1)'}}> Appointments <span></span>
         <i class="fa fa-search" aria-hidden="true"></i></a>
 
-        <a className="health-blog"href="/basicLogin"> Health Blog <span></span>
+        <a className="health-blog"href="/basicLogin" style={{color:'rgba(7, 110, 116, 1)'}}> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
 
-        <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
+        <a className="reviews" href="../Review_Page/ReviewPage.html" style={{color:'rgba(7, 110, 116, 1)'}}> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
         <a href="/basicLogin">
-        <button  className="login" type="button"> Log in</button></a>
-        <a href="/SignUp">
-        <button className="signup"type="button"> Sign up</button></a>
+        <button  className="login" type="button"onClick={logout}> Log out</button></a>
       </nav>
     </section>
   </div>
@@ -72,6 +75,7 @@ const FindDoctorSearchIC = () => {
             </center>
         </div>
         </div>
+        </>
     )
 }
 

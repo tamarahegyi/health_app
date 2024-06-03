@@ -1,13 +1,13 @@
 .searchpage-container {
-    max-width: 1200px;
-    margin: auto;
-    margin-top:10%;
     color: #414146;
-    padding: 0 20px;
     position: static;
-    width: 100%;
+    width: 97%;
+    overflow-x: hidden;
+    background-color: rgba(219, 252, 255, 1);
 
 }
+.available{
+    margin-top:-550px;}
 .searchpage-container img {
     max-width: 100%;
 }
@@ -19,7 +19,8 @@
     margin-bottom: 20px;
     padding: 18px;
     border-radius: 4px;
-    background-color: #fff;
+    background-color: rgba(219, 252, 255, 1);
+    margin-top: -50px;
 
 }
 

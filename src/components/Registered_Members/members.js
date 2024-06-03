@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate, useRef } from "react-router-dom";
 import FindDoctorSearchIC from "../InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC";
 import './/members.css'
 
@@ -13,8 +12,7 @@ const members = ()=>{
 const deleteAccount=()=>{
   localStorage.clear("signUp")
   window.location.reload()
-}
-
+};
   
     return(<>
 <div>
@@ -46,8 +44,10 @@ const deleteAccount=()=>{
 
   <section className="hero-section">
     <div>
+
       <div data-aos="fade-up" className="flex-hero">
-        <h2>Wellcome to HealthGuard {localStorage.getItem("name")}</h2>
+        <h2 className="welcome" id="message">Welcome at HealthGuard</h2>
+        <h2 className="name"></h2>
           <h1 className="text-gradient">
             Your Health<br></br>
             <span className="text-gradient">

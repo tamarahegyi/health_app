@@ -37,6 +37,21 @@ const Log_in = () => {
     }
   };
 
+  const handleClick=()=>{
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const user = localUsers[email];
+
+    if(user && user.password === password){
+      window.location.href="/basicLogin"
+    }
+    else{
+      alert("Please sing up or login before booking an appointment")
+    }
+  };
+
+  
+
   return (
     <div>
       {showHome ? (
@@ -52,7 +67,7 @@ const Log_in = () => {
                 <a className="home" href="./navbar">
                   Home <i className="fa fa-home" aria-hidden="true"></i>
                 </a>
-                <a className="appointments" href="../Search-Page/SearchPage.html">
+                <a className="appointments" href="./basicLogin" onClick={handleClick}>
                   Appointments <i className="fa fa-search" aria-hidden="true"></i>
                 </a>
                 <a className="health-blog" href="#">

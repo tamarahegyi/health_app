@@ -71,7 +71,7 @@ const Sign_Up = () => {
                     <i className="fa fa-home" aria-hidden="true"></i>
                   </a>
 
-                  <a className="appointments" href="../Search-Page/SearchPage.html">
+                  <a className="appointments" href="/basicLogin">
                     Appointments <span></span>
                     <i className="fa fa-search" aria-hidden="true"></i>
                   </a>
@@ -200,7 +200,7 @@ const Sign_Up = () => {
                     <i className="fa fa-home" aria-hidden="true"></i>
                   </a>
 
-                  <a className="appointments" href="../Search-Page/SearchPage.html">
+                  <a className="appointments" href="/basicLogin">
                     Appointments <span></span>
                     <i className="fa fa-search" aria-hidden="true"></i>
                   </a>
