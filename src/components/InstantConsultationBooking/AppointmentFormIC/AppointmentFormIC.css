@@ -1,0 +1,14 @@
+.submit{
+    width:70%;
+   font-size: small;
+   border-radius: 50%;
+   margin-left:60px;
+   
+}
+.form-group{
+    font-size: small;
+    width:70%;
+}
+.booking-input{
+    cursor: pointer;
+}
