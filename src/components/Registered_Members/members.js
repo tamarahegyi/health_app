@@ -1,70 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FindDoctorSearchIC from "../InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC";
-import './/members.css'
+import './members.css';
 
-const members = ()=>{
-  const localUsers = JSON.parse(localStorage.getItem("users")) || {};
+const Members = () => {
+  const [userName, setUserName] = useState("");
 
-  const logout=()=>{
-    localStorage.removeItem("signUp")
-    window.location.reload()
-}
-const deleteAccount=()=>{
-  localStorage.clear("signUp")
-  window.location.reload()
-};
-  
-    return(<>
-<div>
-    <nav className="Nav">
+  useEffect(() => {
+    const localUsers = JSON.parse(localStorage.getItem("users")) || {};
+    const loggedInUser = localStorage.getItem("signUp");
+    if (loggedInUser && localUsers[loggedInUser]) {
+      setUserName(localUsers[loggedInUser].name);
+    }
+  }, []);
+
+  const logout = () => {
+    localStorage.removeItem("signUp");
+    window.location.reload();
+  };
+
+  const deleteAccount = () => {
+    const loggedInUser = localStorage.getItem("signUp");
+    if (loggedInUser) {
+      const localUsers = JSON.parse(localStorage.getItem("users")) || {};
+      delete localUsers[loggedInUser]; 
+      localStorage.removeItem("signUp");
+      // Delete the current user's data
+      localStorage.setItem("users", JSON.stringify(localUsers)); // Update localStorage
+    }
+    window.location.reload(); // Reload the page
+  };
+
+  return (
     <div>
-    <section className="section">
-      <nav className="navbar">
-          <a className="logo"> HealthGuard <span></span>
-          <i className="fa fa-tint" aria-hidden="true"></i></a>
+      <nav className="Nav">
+        <section className="section">
+          <nav className="navbar">
+            <a className="logo">HealthGuard <i className="fa fa-tint" aria-hidden="true"></i></a>
+            <a className="home" href="./members">Home <i className="fa fa-home" aria-hidden="true"></i></a>
+            <a className="appointments" href="/FindDoctorSearchIC">Appointments <i className="fa fa-search" aria-hidden="true"></i></a>
+            <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
+            <a className="reviews" href="../FindDoctor">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
+            <button className="login" type="button" onClick={logout}>Log out</button>
+            <button className="signup" type="button" onClick={deleteAccount}>Your Profile</button>
+          </nav>
+        </section>
 
-          <a className="home" href="./members"> Home <span></span>
-          <i className="fa fa-home" aria-hidden="true"></i></a>
-        <a className="appointments" href="/FindDoctorSearchIC"> Appointments <span></span>
-        <i className="fa fa-search" aria-hidden="true"></i></a>
-
-        <a className="health-blog"href="#"> Health Blog <span></span>
-        <i className="fa fa-users" aria-hidden="true"></i></a>
-
-        <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
-        <i className="fa fa-book" aria-hidden="true"></i></a>
-
-        <a href="/navbar">
-        <button className="login" type="button" id="logout" onClick={logout} > Log out</button></a>
-        <a href="/SignUp">
-        <button className="signup" type="button" onClick={deleteAccount}> Your Profile</button></a>
+        <section className="hero-section">
+          <div data-aos="fade-up" className="flex-hero">
+            <h2 className="welcome"></h2>
+            {userName && <h2 className="name">Welcome to HealthGuard</h2>}
+            <h3 className="name"> {userName}</h3>
+            <h1 className="text-gradient">
+              Your Health<br />
+              <span className="text-gradient">Our Mission</span>
+            </h1>
+            <h4>“Primum non nocere” <br />“First do no harm”</h4>
+            <a href="/FindDoctorSearchIC">
+              <button className="startbutton" type="button">Book an appointment</button>
+            </a>
+          </div>
+        </section>
       </nav>
-    </section>
-  </div>
-
-  <section className="hero-section">
-    <div>
-
-      <div data-aos="fade-up" className="flex-hero">
-        <h2 className="welcome" id="message">Welcome at HealthGuard</h2>
-        <h2 className="name"></h2>
-          <h1 className="text-gradient">
-            Your Health<br></br>
-            <span className="text-gradient">
-              Our Mission
-            </span>
-          </h1>
-          <h4>
-            “Primum non nocere” <br></br>“First do no harm”</h4>
-        </div>
-        <a href="/Appointments"><button className ="startbutton" type="button"> Book an appointment
-        </button>
-        </a>
     </div>
-    </section>
-    </nav>
-</div>
-    </>);
-}
+  );
+};
 
-export default members;
+export default Members;

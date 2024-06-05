@@ -11,6 +11,8 @@ import AppointmentFormIC from './components/InstantConsultationBooking/Appointme
 import DoctorCardIC from './components/InstantConsultationBooking/DoctorCardIC/DoctorCardIC';
 import FindDoctorSearchIC from './components/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC';
 
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function App() {
@@ -27,7 +29,7 @@ function App() {
           <Route path="/AppointmentFormIC" element={<AppointmentFormIC/>}/>   
           <Route path="/DoctorCardIC" element={<DoctorCardIC/>}/>  
           <Route path="/FindDoctorSearchIC" element={<FindDoctorSearchIC/>}/>
-          </Routes>  
+          </Routes>
         </BrowserRouter>
         </>
   )

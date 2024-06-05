@@ -1,11 +1,38 @@
-
+.logo{
+    margin-left:0px;
+    margin-right:-50px;
+    color:#414146;
+}
+.home{
+    margin-left:-10px;
+}
+.reviews{
+    margin-right: 0px;
+}
+.profile{
+    margin-left:60px;
+    border-radius: 20%;
+}
 .location-search-box {
     display: flex;
     align-items: center;
     width: 286px;
     position: relative;
 }
+#logout{
+    margin-top:-49px;
+    border-radius: 20%;
+    width:10%;
+}
+#navbar{
+display: block;
+padding-left:40px;
+padding-top:30px;
+}
 
+#home{
+    margin-left:200px
+}
 .location-search-box>img {
     border: 1px solid #ddd;
     border-right: none;
@@ -32,6 +59,9 @@
     z-index: 5;
     margin-top: 2px;
     border: 1px solid #555;
+}
+#search{
+    width:100%;
 }
 
 .search-location-result-item {

@@ -13,12 +13,14 @@ section{
     font-size:large;
     display:inline;
   }
+
   a:hover{
     color:rgba(219, 252, 255, 1);
   }
   .home{
     margin-right:30px;
     color:white;
+    margin-left:140px;
   }
   .appointments{
     margin-right:30px;
@@ -44,7 +46,6 @@ section{
   }
   .login{
     margin-right:5px;
-    margin-top:5px;
     border-radius: 30%;
   }
   .login:hover{
@@ -146,6 +147,10 @@ section{
   }
   .welcome{
   color:#076e74;
+  }
+  .name{
+      color:#076e74;
+      
   }
   h4 {
     background-color: rgba(219, 252, 255, 1);

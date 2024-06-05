@@ -201,6 +201,10 @@ button {
 width:40%;
 margin-bottom:10px;
 }
+.profile{
+  width:10%;
+  margin-top:10px;
+}
 
 button:hover {
   background-color: rgba(172, 204, 206, 1);
