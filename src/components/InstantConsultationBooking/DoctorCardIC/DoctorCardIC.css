@@ -18,14 +18,34 @@
     margin-left:270px;
 
   }
+  .tanks{
+    text-align: center;
+  }
   .booking-name{
     text-align: center;
   }
-
+  .username{
+    text-decoration: underline;
+  }
+  .usernumber{
+    text-decoration: underline;
+  }
+  .usertime{
+    text-decoration: underline;
+  }
+  .userdate{
+    text-decoration: underline;
+  }
   .booking-number{
     text-align: center;
   }
 
+  .booking-date{
+    text-align: center;
+  }
+  .booking-time{
+    text-align: center;
+  }
   .doctor-card-details-container {
     padding: 20px;
   }

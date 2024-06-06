@@ -15,7 +15,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber,date });
+      onSubmit({ name, phoneNumber,date, time });
       setName('');
       setPhoneNumber('');
       setDate('')
@@ -23,7 +23,20 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
 
       if(time < "06:00" || time > "20:00"){}
     };
-  
+
+    // At the moment this code doesn't seem to set the date to a min of today's date
+    document.addEventListener('DOMContentLoaded', (event) => {
+      const dateInput = document.getElementById('dateInput');
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+      const day = String(today.getDate()).padStart(2, '0');
+      
+      const todayString = `${year}-${month}-${day}`;
+      
+      dateInput.setAttribute('min', todayString);
+    })
+
     return (
       <form onSubmit={handleFormSubmit} className="appointment-form">
         <div className="form-group">
@@ -57,10 +70,12 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
+            
           />
           </div>
           <div className="form-group">
           <label htmlFor="time">Book time Slot</label>
+          <h5>Kindly note we are open from 6am until 8pm.</h5>
           <input
             className='booking-input'
             type="time"
