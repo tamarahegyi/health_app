@@ -70,7 +70,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
           onClose={() => setShowModal(false)}
         >
           {(close) => (
-            <div className="doctorbg" style={{ height: '100vh', overflow: 'hidden' }}>
+            <div className="doctorbg" style={{ height: '150vh', overflow: 'hidden' }}>
               <div>
                 <div className="doctor-card-profile-image-container">
                 <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"> <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg>
@@ -89,6 +89,7 @@ const DoctorCardIC = ({ name, speciality, experience, ratings, profilePic }) => 
                   <h3 className="booked-appointment" style={{ textAlign: 'center'}}>Appointment Booked!</h3>
                   {appointments.map((appointment) => (
                     <div className="bookedInfo" key={appointment.id}>
+                      <p className='booking-role'>Role:   <span className='userrole'>{appointment.role}</span></p>
                       <p className="booking-name">Name:   <span className="username">{appointment.name}</span></p>
                       <p className="booking-number">Phone Number:   <span className="usernumber">{appointment.phoneNumber}</span></p>
                       <p className="booking-date">Appointment date:   <span className="userdate"> {appointment.date}</span></p>

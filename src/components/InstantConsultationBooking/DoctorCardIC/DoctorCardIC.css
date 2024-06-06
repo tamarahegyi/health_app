@@ -24,8 +24,14 @@
   .booking-name{
     text-align: center;
   }
+  .userrole{
+    text-decoration: underline;
+  }
   .username{
     text-decoration: underline;
+  }
+  .booking-role{
+    text-align: center;
   }
   .usernumber{
     text-decoration: underline;
@@ -129,9 +135,6 @@
   justify-content: center;
   align-items: center;
 }
-.submit{
-  margin-left:120px;
-}
 
 .modal-content {
   background-color: #fff;
@@ -162,7 +165,7 @@
 }
 .doctorbg{
 background-color: rgba(53, 158, 163, 1);
-padding-top:40px;
+padding-top:10px;
 
 
 }

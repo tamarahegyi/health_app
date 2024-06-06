@@ -3,7 +3,6 @@
    font-size: small;
    border-radius: 50%;
    margin-left:60px;
-   
 }
 .form-group{
     font-size: small;
@@ -11,4 +10,7 @@
 }
 .booking-input{
     cursor: pointer;
+}
+.booking-input{
+    height: 1vh;
 }

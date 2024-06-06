@@ -7,7 +7,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
     const [selectedSlot, setSelectedSlot] = useState(null);
     const[date, setDate]= useState('');
     const[time, setTime]= useState('');
-    
+    const[role, setRole]=useState('');
 
     const handleSlotSelection = (slot) => {
       setSelectedSlot(slot);
@@ -15,11 +15,12 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
   
     const handleFormSubmit = (e) => {
       e.preventDefault();
-      onSubmit({ name, phoneNumber,date, time });
+      onSubmit({ name, phoneNumber,date, time, role });
       setName('');
       setPhoneNumber('');
       setDate('')
       setTime('');
+      setRole('');
 
       if(time < "06:00" || time > "20:00"){}
     };
@@ -37,8 +38,25 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
       dateInput.setAttribute('min', todayString);
     })
 
+    const options=['Doctor','Patient']
+
     return (
       <form onSubmit={handleFormSubmit} className="appointment-form">
+          <div className="form-group">
+          <label htmlFor="role">Role:</label>
+          <input
+            className='booking-input'
+            list="data"
+            type="list"
+            id="role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+            required />
+            <datalist id="data">
+              <option>Doctor</option>
+              <option>Patient</option>
+            </datalist>
+        </div>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
