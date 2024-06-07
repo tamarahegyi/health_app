@@ -1,113 +1,188 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './AppointmentFormIC.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
-    const [name, setName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [selectedSlot, setSelectedSlot] = useState(null);
-    const[date, setDate]= useState('');
-    const[time, setTime]= useState('');
-    const[role, setRole]=useState('');
-
-    const handleSlotSelection = (slot) => {
-      setSelectedSlot(slot);
-    };
+  const [name, setName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [role, setRole] = useState('');
+  const [appointments, setAppointments] = useState([]);
+  const [bookingDetails, setBookingDetails] = useState(null);
+  const[showBookingDetails, setShowBookingDetails]= useState(false);
   
-    const handleFormSubmit = (e) => {
-      e.preventDefault();
-      onSubmit({ name, phoneNumber,date, time, role });
+
+  const roleRef = useRef();
+  const nameRef = useRef();
+  const phoneNumberRef = useRef();
+  const dateRef = useRef();
+  const timeRef = useRef();
+
+  const localAppointments = JSON.parse(localStorage.getItem("appointments")) || {};
+
+  useEffect(() => {
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('date').setAttribute('min', today);
+  }, []);
+
+  const handleSlotSelection = (slot) => {
+    setSelectedSlot(slot);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (time < "06:00" || time > "20:00") {
+      alert("Please select a time between 06:00 and 20:00.");
+      return;
+    }
+
+    const appointmentData = {
+      name: nameRef.current.value,
+      role: roleRef.current.value,
+      phoneNumber: phoneNumberRef.current.value,
+      date: dateRef.current.value,
+      time: timeRef.current.value,
+      doctorName,
+      doctorSpeciality,
+  };
+
+    const loggedInUser = localStorage.getItem("signUp");
+
+    if (loggedInUser) {
+      const newAppointment = {
+        id: uuidv4(),
+        ...appointmentData,
+      };
+
+      const localAppointments = JSON.parse(localStorage.getItem("appointments")) || {};
+      if (!localAppointments[loggedInUser]) {
+        localAppointments[loggedInUser] = [];
+      }
+      localAppointments[loggedInUser].push(newAppointment);
+
+      localStorage.setItem("appointments", JSON.stringify(localAppointments));
+
+      setAppointments(localAppointments[loggedInUser]);
+      setBookingDetails(newAppointment);
+
+      // Clear form
       setName('');
       setPhoneNumber('');
-      setDate('')
+      setDate('');
       setTime('');
       setRole('');
 
-      if(time < "06:00" || time > "20:00"){}
-    };
-
-    // At the moment this code doesn't seem to set the date to a min of today's date
-    document.addEventListener('DOMContentLoaded', (event) => {
-      const dateInput = document.getElementById('dateInput');
-      const today = new Date();
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-      const day = String(today.getDate()).padStart(2, '0');
-      
-      const todayString = `${year}-${month}-${day}`;
-      
-      dateInput.setAttribute('min', todayString);
-    })
-
-    const options=['Doctor','Patient']
-
-    return (
-      <form onSubmit={handleFormSubmit} className="appointment-form">
-          <div className="form-group">
-          <label htmlFor="role">Role:</label>
-          <input
-            className='booking-input'
-            list="data"
-            type="list"
-            id="role"
-            value={role}
-            onChange={(e) => setRole(e.target.value)}
-            required />
-            <datalist id="data">
-              <option>Doctor</option>
-              <option>Patient</option>
-            </datalist>
-        </div>
-        <div className="form-group">
-          <label htmlFor="name">Name:</label>
-          <input
-            className='booking-input'
-            type="text"
-            id="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <input
-            className='booking-input'
-            type="tel"
-            id="phoneNumber"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            required
-          />
-          </div>
-          <div className="form-group">
-          <label htmlFor="date">Date of the appointment</label>
-          <input
-            className='booking-input'
-            type="date"
-            id="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            required
-            
-          />
-          </div>
-          <div className="form-group">
-          <label htmlFor="time">Book time Slot</label>
-          <h5>Kindly note we are open from 6am until 8pm.</h5>
-          <input
-            className='booking-input'
-            type="time"
-            id="time"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            min="06:00"
-            max="20:00"
-            required
-          />
-        </div>
-        <button className="submit" type="submit">Book Now</button>
-      </form>
-    );
+      alert("Appointment booked successfully.");
+    
+    }
   };
 
-export default AppointmentFormIC
+  const handleAppointmentCancel = () => {
+    const loggedInUser = localStorage.getItem("signUp");
+    if (loggedInUser && bookingDetails) {
+      let localAppointments = JSON.parse(localStorage.getItem("appointments")) || {};
+      localAppointments[loggedInUser] = localAppointments[loggedInUser].filter(appointment => appointment.id !== bookingDetails.id);
+
+      localStorage.setItem("appointments", JSON.stringify(localAppointments));
+      setBookingDetails(null);
+    }
+  };
+
+  return (<>
+    <form onSubmit={handleFormSubmit} className="appointment-form">
+      <div className="form-group">
+        <label htmlFor="role">Role:</label>
+        <input
+          ref={roleRef}
+          className='booking-input'
+          list="data"
+          id="role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+          required
+        />
+        <datalist id="data">
+          <option value="Doctor" />
+          <option value="Patient" />
+        </datalist>
+      </div>
+      <div className="form-group">
+        <label htmlFor="name">Name:</label>
+        <input
+          ref={nameRef}
+          className='booking-input'
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="phoneNumber">Phone Number:</label>
+        <input
+          ref={phoneNumberRef}
+          className='booking-input'
+          type="tel"
+          id="phoneNumber"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="date">Date of the appointment:</label>
+        <input
+          ref={dateRef}
+          className='booking-input'
+          type="date"
+          id="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="time">Book time Slot:</label>
+        <h5>Kindly note we are open from 6am until 8pm.</h5>
+        <input
+          ref={timeRef}
+          className='booking-input'
+          type="time"
+          id="time"
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+          min="06:00"
+          max="20:00"
+          required
+        />
+      </div>
+      <button className="submit" type="submit">Book Now</button>
+    </form>
+
+    {bookingDetails && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2 className='booking-details'>Booking Details</h2>
+            <p className='booking-role'><strong>Doctor:</strong> <span className="userrole">{doctorName}</span></p>
+            <p className='booking-role'><strong>Speciality:</strong> <span className="userrole">{doctorSpeciality}</span></p>
+            <p className='booking-name'><strong>Name:</strong> <span className="username">{bookingDetails.name}</span></p>
+            <p className='booking-role'><strong>Role:</strong> <span className="userrole">{bookingDetails.role}</span></p>
+            <p className='booking-number'><strong>Phone Number:</strong> <span className="usernumber">{bookingDetails.phoneNumber}</span></p>
+            <p className='booking-date'><strong>Date:</strong> <span className="userdate">{bookingDetails.date}</span></p>
+            <p className='booking-time'><strong>Time:</strong> <span className="userrole">{bookingDetails.time}</span></p>
+            <a href="./FindDoctorSearchIC"className='appointments1'><p>Back to appointments page</p></a>
+            <button className="cancel-button"onClick={handleAppointmentCancel}>Cancel Appointment</button>
+          </div>
+        </div>
+      )}
+
+    </>
+  );
+};
+
+export default AppointmentFormIC;
+

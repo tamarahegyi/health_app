@@ -18,7 +18,8 @@ const Members = () => {
     window.location.reload();
   };
 
-  const deleteAccount = () => {
+  {/* This is a function for the future to be able to delete the current user's account 
+    const deleteAccount = () => {
     const loggedInUser = localStorage.getItem("signUp");
     if (loggedInUser) {
       const localUsers = JSON.parse(localStorage.getItem("users")) || {};
@@ -28,7 +29,7 @@ const Members = () => {
       localStorage.setItem("users", JSON.stringify(localUsers)); // Update localStorage
     }
     window.location.reload(); // Reload the page
-  };
+  };*/}
 
   return (
     <div>
@@ -40,8 +41,8 @@ const Members = () => {
             <a className="appointments" href="/FindDoctorSearchIC">Appointments <i className="fa fa-search" aria-hidden="true"></i></a>
             <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
             <a className="reviews" href="../FindDoctor">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
-            <button className="login" type="button" onClick={logout}>Log out</button>
-            <button className="signup" type="button" onClick={deleteAccount}>Your Profile</button>
+            <a href="./basicLogin"><button className="login" type="button" onClick={logout}>Log out</button></a>
+            <button className="signup" type="button">Your Profile</button> {/* This button has no function yet*/}
           </nav>
         </section>
 
