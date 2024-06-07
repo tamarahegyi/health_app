@@ -20,8 +20,6 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
   const dateRef = useRef();
   const timeRef = useRef();
 
-  const localAppointments = JSON.parse(localStorage.getItem("appointments")) || {};
-
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
     document.getElementById('date').setAttribute('min', today);

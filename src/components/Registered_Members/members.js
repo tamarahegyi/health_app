@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FindDoctorSearchIC from "../InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC";
 import './members.css';
 
+
 const Members = () => {
   const [userName, setUserName] = useState("");
 
@@ -61,6 +62,7 @@ const Members = () => {
             </a>
           </div>
         </section>
+    
       </nav>
     </div>
   );
