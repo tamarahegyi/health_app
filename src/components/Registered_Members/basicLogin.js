@@ -73,7 +73,7 @@ const Log_in = () => {
                 <a className="health-blog" href="#">
                   Health Blog <i className="fa fa-users" aria-hidden="true"></i>
                 </a>
-                <a className="reviews" href="../Review_Page/ReviewPage.html">
+                <a className="reviews" href="../ReviewForm">
                   Reviews <i className="fa fa-book" aria-hidden="true"></i>
                 </a>
                 <a href="/members">

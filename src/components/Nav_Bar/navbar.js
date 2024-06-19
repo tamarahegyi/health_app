@@ -19,7 +19,7 @@ const navbar =()=>{
         <a className="health-blog"href="/basicLogin"> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
 
-        <a className="reviews" href="../Review_Page/ReviewPage.html"> Reviews <span></span>
+        <a className="reviews" href="../ReviewForm"> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
         <a href="/basicLogin">
         <button  className="login" type="button"> Log in</button></a>

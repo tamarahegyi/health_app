@@ -50,10 +50,12 @@ const FindDoctorSearchIC = () => {
         <a className="health-blog"href="/basicLogin" style={{color:'rgba(7, 110, 116, 1)'}}> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
 
-        <a className="reviews" href="../Review_Page/ReviewPage.html" style={{color:'rgba(7, 110, 116, 1)'}}> Reviews <span></span>
+        <a className="reviews" href="../ReviewForm" style={{color:'rgba(7, 110, 116, 1)'}}> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
+        <a href="/profile">
+        <button className="profile" type="button">Your Profile</button> {/* This button has no function yet*/}</a>
         <a href="/basicLogin">
-        <button  className="login" type="button"onClick={logout}> Log out</button></a>
+        <button  id="button-logout"className="login" type="button"onClick={logout}> Log out</button></a>
       </nav>
     </section>
   </div>

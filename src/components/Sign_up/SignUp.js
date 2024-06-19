@@ -81,7 +81,7 @@ const Sign_Up = () => {
                     <i className="fa fa-users" aria-hidden="true"></i>
                   </a>
 
-                  <a className="reviews" href="../Review_Page/ReviewPage.html">
+                  <a className="reviews" href="../ReviewForm">
                     Reviews <span></span>
                     <i className="fa fa-book" aria-hidden="true"></i>
                   </a>
@@ -210,7 +210,7 @@ const Sign_Up = () => {
                     <i className="fa fa-users" aria-hidden="true"></i>
                   </a>
 
-                  <a className="reviews" href="../Review_Page/ReviewPage.html">
+                  <a className="reviews" href="../ReviewForm">
                     Reviews <span></span>
                     <i className="fa fa-book" aria-hidden="true"></i>
                   </a>

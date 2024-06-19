@@ -169,7 +169,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
             <p className='booking-date'><strong>Date:</strong> <span className="userdate">{bookingDetails.date}</span></p>
             <p className='booking-time'><strong>Time:</strong> <span className="userrole">{bookingDetails.time}</span></p>
             <a href="./FindDoctorSearchIC"className='appointments1'><p>Back to appointments page</p></a>
-            <button className="cancel-button"onClick={handleAppointmentCancel}>Cancel Appointment</button>
+            <button className="Cancel-button"onClick={handleAppointmentCancel}>Cancel Appointment</button>
           </div>
         </div>
       )}

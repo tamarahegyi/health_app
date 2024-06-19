@@ -41,7 +41,7 @@ const Members = () => {
             <a className="home" href="./members">Home <i className="fa fa-home" aria-hidden="true"></i></a>
             <a className="appointments" href="/FindDoctorSearchIC">Appointments <i className="fa fa-search" aria-hidden="true"></i></a>
             <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
-            <a className="reviews" href="../FindDoctor">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
+            <a className="reviews" href="/ReviewForm">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
             <a href="./basicLogin"><button className="login" type="button" onClick={logout}>Log out</button></a>
             <button className="signup" type="button">Your Profile</button> {/* This button has no function yet*/}
           </nav>

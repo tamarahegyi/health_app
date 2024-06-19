@@ -4,7 +4,7 @@
 .appointments-container {
     position: fixed;
     bottom: 5px; /* Distance from the bottom of the screen */
-    left: 20px;  /* Distance from the left of the screen */
+    left:20px;  /* Distance from the left of the screen */
     /* z-index: 1000;  Ensures it's above other content */
     width:40%;
     display: inline-flex;
@@ -51,8 +51,9 @@
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 13px;
     width: fit-content;
+    height: fit-content;
   }
   
   /* Hover state for cancel button */

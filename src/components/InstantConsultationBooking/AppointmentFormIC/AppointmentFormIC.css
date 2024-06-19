@@ -48,7 +48,7 @@
     margin: 5px 0;
   }
   
-  .cancel-button {
+  .Cancel-button {
     background: #ff4d4d;
     color: #fff;
     border: none;
@@ -57,10 +57,10 @@
     border-radius: 5px;
   }
   
-  .cancel-button:hover {
+  .Cancel-button:hover {
     background: #ff1a1a;
   }
-  .cancel-button{
+  .Cancel-button{
     display: block;
     margin: auto;
   }
