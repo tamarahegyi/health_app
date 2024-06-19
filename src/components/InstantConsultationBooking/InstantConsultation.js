@@ -30,6 +30,7 @@ const InstantConsultation = () => {
         })
         .catch(err => console.log(err));
     }
+    
     const handleSearch = (searchText) => {
 
         if (searchText === '') {

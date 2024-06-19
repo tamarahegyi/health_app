@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from './components/Nav_Bar/navbar';
 import Login from './components/Log_in/Login';
 import SignUp from './components/Sign_up/SignUp';
@@ -20,6 +20,7 @@ function App() {
   return (<>
         <BrowserRouter>
           <FontAwesomeIcon/>
+          <Notification>
           <Routes>
           <Route path="/NavBar" element={<Navbar />} />
           <Route path="/Login" element={<Login />} />
@@ -30,8 +31,8 @@ function App() {
           <Route path="/AppointmentFormIC" element={<AppointmentFormIC/>}/>   
           <Route path="/DoctorCardIC" element={<DoctorCardIC/>}/>  
           <Route path="/FindDoctorSearchIC" element={<FindDoctorSearchIC/>}/>
-          <Route path="/Notification" element={<Notification/>}/>
           </Routes>
+          </Notification>
         </BrowserRouter>
         </>
   )

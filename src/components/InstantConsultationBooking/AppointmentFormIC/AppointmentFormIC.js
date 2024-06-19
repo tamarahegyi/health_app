@@ -25,10 +25,6 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
     document.getElementById('date').setAttribute('min', today);
   }, []);
 
-  const handleSlotSelection = (slot) => {
-    setSelectedSlot(slot);
-  };
-
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
