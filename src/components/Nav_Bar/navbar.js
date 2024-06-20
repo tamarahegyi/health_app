@@ -1,6 +1,15 @@
 import React, {Component} from "react";
 
 const navbar =()=>{
+
+  const handleReviewClick =()=>{
+    const signUp = localStorage.getItem('signup')
+    if( signUp !== null ){
+      window.location.href="/ReviewForm"}
+    else{
+      alert("Please sing up or login before you leave a review")
+      }
+  };
   
   return(<>
     <nav className="Nav">
@@ -19,7 +28,7 @@ const navbar =()=>{
         <a className="health-blog"href="/basicLogin"> Health Blog <span></span>
         <i class="fa fa-users" aria-hidden="true"></i></a>
 
-        <a className="reviews" href="../ReviewForm"> Reviews <span></span>
+        <a className="reviews" onClick={handleReviewClick} > Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
         <a href="/basicLogin">
         <button  className="login" type="button"> Log in</button></a>

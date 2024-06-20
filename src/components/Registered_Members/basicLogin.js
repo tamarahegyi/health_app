@@ -50,6 +50,19 @@ const Log_in = () => {
     }
   };
 
+  const handleReviewClick =()=>{
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+    const user = localUsers[email];
+
+    if(user && user.password === password){
+      window.location.href="/basicLogin"
+    }
+    else{
+      alert("Please sing up or login before you leave a review")
+    }
+  };
+
   
 
   return (
@@ -73,7 +86,7 @@ const Log_in = () => {
                 <a className="health-blog" href="#">
                   Health Blog <i className="fa fa-users" aria-hidden="true"></i>
                 </a>
-                <a className="reviews" href="../ReviewForm">
+                <a className="reviews" onClick={handleReviewClick}>
                   Reviews <i className="fa fa-book" aria-hidden="true"></i>
                 </a>
                 <a href="/members">
