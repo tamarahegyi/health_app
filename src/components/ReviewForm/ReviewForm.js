@@ -155,28 +155,27 @@ const ReviewForm = () => {
       {selectedDoctor && (
         <Popup open={!!selectedDoctor} closeOnDocumentClick onClose={() => setSelectedDoctor(null)}>
           <div className="popup-content">
-            <h2>Leave a Review for {selectedDoctor.name}</h2>
-            <p>Speciality: {selectedDoctor.speciality}</p>
-            <div>
-              <p>Rating:</p>
-              <div>
-                {[...Array(5)].map((_, i) => (
-                  <span
-                    key={i}
-                    className={`star ${i < rating ? 'selected' : ''}`}
-                    onClick={() => setRating(i + 1)}
-                  >★</span>
-                ))}
-              </div>
-            </div>
+            <h2 className='review-main'>Leave a Review for {selectedDoctor.name}</h2>
+            <p className='speciality'>{selectedDoctor.speciality}</p>
+            <br></br>
             <p>Name</p>
-            <input ref={nameRef} placeholder='Please enter your name' />
-            <textarea
+            <input className='name-input' ref={nameRef} placeholder='Please enter your name' required/>
+            <textarea id='textarea'
               ref={reviewRef}
               placeholder="Please tell us about your experience"
               value={review}
               onChange={(e) => setReview(e.target.value)}
+              
             />
+            <br></br>
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                  className={`star ${i < rating ? 'selected' : ''}`}
+                  onClick={() => setRating(i + 1)}
+              >★</span>
+            ))}
+            <br></br>
             <button onClick={handleReviewSubmit}>Submit</button>
           </div>
         </Popup>

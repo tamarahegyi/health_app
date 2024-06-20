@@ -111,11 +111,10 @@ button{
 /*Popup style */
 
 .popup-content {
-  background: white;
+  background: rgb(122, 216, 182);
   padding: 20px;
   border-radius: 10px;
   max-width: 500px;
-  margin: auto;
 }
 
 .popup-content h2 {
@@ -125,7 +124,7 @@ button{
 .popup-content .star {
   font-size: 24px;
   cursor: pointer;
-  color: gray;
+  color: rgb(250, 239, 239);
 }
 
 .popup-content .star.selected {
@@ -136,19 +135,20 @@ button{
   width: 100%;
   height: 100px;
   margin-top: 10px;
-  padding: 10px;
+  padding-right:15px;
   border-radius: 5px;
   border: 1px solid #ddd;
 }
 
 .popup-content button {
-  background-color: #007bff;
+  background-color: rgba(7, 110, 116, 1);
   color: white;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
   margin-top: 10px;
+  width: 20%;
 }
 
 .popup-content button:hover {
@@ -158,5 +158,17 @@ button{
 .delete-button {
   background-color: rgb(232, 118, 118);
   cursor: not-allowed;
-  
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.speciality{
+  color:black;
+}
+.name-input{
+  width: 50%;
+}
+
+#textarea{
+  width: 80%;
 }
