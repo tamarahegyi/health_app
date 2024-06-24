@@ -112,7 +112,7 @@ const Sign_Up = () => {
               <div className="signup-form">
                 <form>
                   <div className="form-group">
-                    <label className="fullname" htmlFor="name">
+                    <label className="fullname1" htmlFor="name">
                       Name
                     </label>
                     <input
@@ -126,7 +126,7 @@ const Sign_Up = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label className="phone-number" htmlFor="phone">
+                    <label className="phone-number1" htmlFor="phone">
                       Phone
                     </label>
                     <input
@@ -142,7 +142,7 @@ const Sign_Up = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label className="email-address" htmlFor="email">
+                    <label className="email-address1" htmlFor="email">
                       Email
                     </label>
                     <input

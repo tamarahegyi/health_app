@@ -88,7 +88,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
   return (<>
     <form onSubmit={handleFormSubmit} className="appointment-form">
       <div className="form-group">
-        <label htmlFor="role">Role:</label>
+        <label id="role1" htmlFor="role">Role:</label>
         <input
           ref={roleRef}
           className='booking-input'
@@ -104,7 +104,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
         </datalist>
       </div>
       <div className="form-group">
-        <label htmlFor="name">Name:</label>
+        <label id="name1" htmlFor="name">Name:</label>
         <input
           ref={nameRef}
           className='booking-input'
@@ -116,7 +116,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="phoneNumber">Phone Number:</label>
+        <label id="number1" htmlFor="phoneNumber">Phone Number:</label>
         <input
           ref={phoneNumberRef}
           className='booking-input'
@@ -128,7 +128,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="date">Date of the appointment:</label>
+        <label id="date1" htmlFor="date">Date of the appointment:</label>
         <input
           ref={dateRef}
           className='booking-input'
@@ -140,7 +140,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="time">Book time Slot:</label>
+        <label id="time1"htmlFor="time">Book time Slot:</label>
         <h5>Kindly note we are open from 6am until 8pm.</h5>
         <input
           ref={timeRef}
@@ -169,7 +169,7 @@ const AppointmentFormIC = ({ doctorName, doctorSpeciality, onSubmit }) => {
             <p className='booking-date'><strong>Date:</strong> <span className="userdate">{bookingDetails.date}</span></p>
             <p className='booking-time'><strong>Time:</strong> <span className="userrole">{bookingDetails.time}</span></p>
             <a href="./FindDoctorSearchIC"className='appointments1'><p>Back to appointments page</p></a>
-            <button className="Cancel-button"onClick={handleAppointmentCancel}>Cancel Appointment</button>
+            <button className="Cancel-button2"onClick={handleAppointmentCancel}>Cancel Appointment</button>
           </div>
         </div>
       )}

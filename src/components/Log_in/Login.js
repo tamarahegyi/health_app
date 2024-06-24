@@ -1,133 +1,113 @@
-import React, { useEffect, useRef, useState } from "react";
-import Members from "../Registered_Members/members";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import '../ProfileCard/ProfileCard.css';
 
-const Log_in = () => {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const [showHome, setShowHome] = useState(false);
-  const [show, setShow] = useState(false);
+const ProfileForm = () => {
+  const [userName, setUserName] = useState("");
+  const [userPhone, setUserPhone] = useState("");
+  const [userEmail, setUserEmail] = useState("");
+  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [isOpen, setIsOpen]= useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const localEmail = localStorage.getItem("email");
-    const localPassword = localStorage.getItem("password");
-    const localSignUp = localStorage.getItem("signUp");
-
-    if (localSignUp) {
-      setShowHome(true);
-    }
-    if (localEmail && localPassword) {
-      setShow(true);
+    const localUsers = JSON.parse(localStorage.getItem("users")) || {};
+    const loggedInUser = localStorage.getItem("signUp");
+    if (loggedInUser && localUsers[loggedInUser]) {
+      setUserName(localUsers[loggedInUser].name);
+      setUserPhone(localUsers[loggedInUser].phone);
+      setUserEmail(localUsers[loggedInUser].email);
+      setLoggedInUser(loggedInUser);
     }
   }, []);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    const localEmail = localStorage.getItem("email");
-    const localPassword = localStorage.getItem("password");
-
-    if (emailRef.current.value === localEmail && passwordRef.current.value === localPassword) {
-      localStorage.setItem("signUp", emailRef.current.value);
-      window.location.reload();
-    } else {
-      alert("Please use valid credentials!");
+  const editDetails = () => {
+    if (loggedInUser) {
+      const users = JSON.parse(localStorage.getItem('users')) || {};
+      users[loggedInUser] = { name: userName, email: userEmail, phone: userPhone };
+      localStorage.setItem('users', JSON.stringify(users));
+      console.log('User details updated:', users[loggedInUser]);
+      navigate("/success"); // Navigate to the success page
     }
   };
 
+  const logout = () => {
+    localStorage.removeItem("signUp");
+    window.location.reload();
+  };
+
+  const toggleDowpdown =()=>{
+    setIsOpen(!isOpen);
+  }
+
   return (
-    <div>
-      {showHome ? (
-        <Members />
-      ) : (
+    <>
+      <div>
         <nav className="Nav">
-          <div>
-            <section className="section">
-              <nav className="navbar">
-                <a className="logo">
-                  HealthGuard <i className="fa fa-tint" aria-hidden="true"></i>
-                </a>
-                <a className="home" href="./navbar">
-                  Home <i className="fa fa-home" aria-hidden="true"></i>
-                </a>
-                <a className="appointments" href="../Search-Page/SearchPage.html">
-                  Appointments <i className="fa fa-search" aria-hidden="true"></i>
-                </a>
-                <a className="health-blog" href="#">
-                  Health Blog <i className="fa fa-users" aria-hidden="true"></i>
-                </a>
-                <a className="reviews" href="../ReviewForm">
-                  Reviews <i className="fa fa-book" aria-hidden="true"></i>
-                </a>
-                <a href="/members">
-                <button className="login" type="button" onClick={handleLogin}>
-                  Log in
-                </button></a>
-                <a href="/SignUp">
-                  <button className="signup" type="button">
-                    Sign up
-                  </button>
-                </a>
-              </nav>
-            </section>
-          </div>
-          <div className="container">
-            <div className="login-grid">
-              <div className="login-text">
-                <h2>Login</h2>
+          <section className="section">
+            <nav className="navbar">
+              <a className="logo">HealthGuard <i className="fa fa-tint" aria-hidden="true"></i></a>
+              <a className="home" href="./members">Home <i className="fa fa-home" aria-hidden="true"></i></a>
+              <a className="appointments" href="/FindDoctorSearchIC">Appointments <i className="fa fa-search" aria-hidden="true"></i></a>
+              <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
+              <a className="reviews" href="/ReviewForm">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
+              <a href="./basicLogin"><button className="login" type="button" onClick={logout}>Log out</button></a>
+              <div className="dropdown"><button onClick={toggleDowpdown} className="signup" id="dropbtn">Your Profile</button></div>
+              {isOpen && (
+              <div className="dropdown-content">
+                <a href="./ProfileCard">Your Profile</a>
+                <a href="/ReportLayout">Your Reports</a>
               </div>
-              <div className="login-text">
-                Are you a new member? <a href="/SignUp">Sign Up Here</a>
-              </div>
-              <br />
-              <div className="login-form">
-                <form onSubmit={handleLogin}>
-                  <div className="form-group">
-                    <label className="email" htmlFor="email">
-                      Email
-                    </label>
-                    <input
-                      required
-                      ref={emailRef}
-                      type="email"
-                      name="email"
-                      id="email"
-                      className="form-control"
-                      placeholder="Enter your email"
-                      aria-describedby="helpId"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label className="password" htmlFor="password">
-                      Password
-                    </label>
-                    <input
-                      required
-                      ref={passwordRef}
-                      type="password"
-                      name="password"
-                      id="password"
-                      className="form-control"
-                      placeholder="Enter your password"
-                      aria-describedby="helpId"
-                    />
-                  </div>
-                  <div>
-                    <button className="log-in" type="submit">
-                      Login
-                    </button>
-                    <button className="reset" type="reset">
-                      Reset
-                    </button>
-                  </div>
-                  <br />
-                  <div className="login-text">Forgot Password?</div>
-                </form>
-              </div>
-            </div>
-          </div>
+              )}
+            </nav>
+          </section>
         </nav>
-      )}
-    </div>
+      </div>
+
+      <div className="profile-container">
+        <div className="profile-field">
+          <label htmlFor="name" className="name-tag">Name</label>
+        </div>
+        <input
+          id="name"
+          type="text"
+          className="name-input"
+          value={userName}
+          placeholder="Enter your name"
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <br />
+        <div className="profile-field">
+          <label htmlFor="number" className="number-tag">Phone number</label>
+        </div>
+        <input
+          id="number"
+          type="tel"
+          className="number-input"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          title="Enter 10 numbers between 0-9. 123-456-7890"
+          value={userPhone}
+          placeholder="Enter your phone number"
+          onChange={(e) => setUserPhone(e.target.value)}
+        />
+        <br />
+        <div className="profile-field">
+          <label htmlFor="email" className="email-tag">Email</label>
+        </div>
+        <input
+          id="email"
+          type="email"
+          className="email-input"
+          value={userEmail}
+          placeholder="Enter your email"
+          onChange={(e) => setUserEmail(e.target.value)}
+        />
+        <br />
+        <button type="button" onClick={editDetails} className="edit-button">Edit your details</button>
+      </div>
+    </>
   );
 };
 
-export default Log_in;
+export default ProfileForm;

@@ -31,7 +31,7 @@ const Log_in = () => {
 
     if (user && user.password === password) {
       localStorage.setItem("signUp", email);
-      window.location.reload();
+      window.location.href='/members';
     } else {
       alert("Please use valid credentials!");
     }
@@ -43,7 +43,7 @@ const Log_in = () => {
     const user = localUsers[email];
 
     if(user && user.password === password){
-      window.location.href="/basicLogin"
+      
     }
     else{
       alert("Please sing up or login before booking an appointment")

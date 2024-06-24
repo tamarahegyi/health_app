@@ -1,0 +1,30 @@
+.profile-container {
+    margin-top: 80px;
+    font-size: large;
+  }
+  
+  .name-tag, .phone-tag, .email-tag {
+    text-decoration: underline;
+  }
+  
+  .name-input, .phone-input, .email-input {
+    width: 50%;
+    display: block;
+    margin: auto;
+  }
+  
+  .success-container {
+    text-align: center;
+    margin-top: 100px;
+    margin-top:100px;
+  }
+  h2 {
+    margin-top:20px;
+  }
+  .name1{
+    color: white;
+  }
+  .icon{
+    margin-top:10px;
+    font-size: 5vh;
+  }

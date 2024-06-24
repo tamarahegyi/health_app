@@ -52,7 +52,7 @@ const FindDoctorSearchIC = () => {
 
         <a className="reviews" href="../ReviewForm" style={{color:'rgba(7, 110, 116, 1)'}}> Reviews <span></span>
         <i class="fa fa-book" aria-hidden="true"></i></a>
-        <a href="/profile">
+        <a href="/ProfileCard">
         <button className="profile" type="button">Your Profile</button> {/* This button has no function yet*/}</a>
         <a href="/basicLogin">
         <button  id="button-logout"className="login" type="button"onClick={logout}> Log out</button></a>
@@ -62,7 +62,7 @@ const FindDoctorSearchIC = () => {
 </nav>
 <div className='finddoctor'>
                 <center>
-                    <h1>Find a doctor and Consult instantly</h1>
+                    <h1 className='find-doctor'>Find a doctor and Consult instantly</h1>
                     <div><i style={{ color: 'rgba(7, 110, 116, 1)', fontSize: '20rem' }} className="fa fa-user-md"></i></div>
                     <div className="home-search-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <div className="doctor-search-box">

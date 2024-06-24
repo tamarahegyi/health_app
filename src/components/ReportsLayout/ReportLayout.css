@@ -1,0 +1,26 @@
+.report-tag{
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+.view-report{
+    width:60%;
+    background-color: white;
+    color:rgba(7, 110, 116, 1);
+}
+.view-report:hover{
+    background-color: antiquewhite;
+}
+.download-report{
+    width:80%;
+    background-color: white;
+    color:rgba(7, 110, 116, 1);
+}
+.download-report:hover{
+    background-color: antiquewhite;
+}
+
+.table-head{
+    text-decoration:underline;
+}

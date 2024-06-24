@@ -12,6 +12,9 @@ import DoctorCardIC from './components/InstantConsultationBooking/DoctorCardIC/D
 import FindDoctorSearchIC from './components/InstantConsultationBooking/FindDoctorSearchIC/FindDoctorSearchIC';
 import Notification from './components/Notification/Notification';
 import ReviewForm from './components/ReviewForm/ReviewForm';
+import ProfileCard from './components/ProfileCard/ProfileCard';
+import Success from './components/ProfileCard/Success';
+import ReportLayout from './components/ReportsLayout/ReportLayout';
 
 
 
@@ -33,6 +36,9 @@ function App() {
           <Route path="/DoctorCardIC" element={<DoctorCardIC/>}/>  
           <Route path="/FindDoctorSearchIC" element={<FindDoctorSearchIC/>}/>
           <Route path="/ReviewForm" element={<ReviewForm/>}/>
+          <Route path="/ProfileCard" element ={<ProfileCard/>}/>
+          <Route path="/Success" element ={<Success/>}/>
+          <Route path="/ReportLayout" element={<ReportLayout/>}/>
           </Routes>
           </Notification>
         </BrowserRouter>

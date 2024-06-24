@@ -95,7 +95,7 @@ const ReviewForm = () => {
           <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
           <a className="reviews" href="./ReviewForm">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
           <a href="./basicLogin"><button className="login" type="button" onClick={() => { localStorage.removeItem("signUp"); window.location.reload(); }}>Log out</button></a>
-          <button className="signup" type="button">Your Profile</button>
+          <a href="./ProfileCard"><button className="signup" type="button">Your Profile</button></a>
         </nav>
       </section>
 

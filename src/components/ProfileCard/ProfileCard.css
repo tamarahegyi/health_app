@@ -1,0 +1,75 @@
+.profile-field{
+    width:50%;
+    margin: auto;
+}
+
+.profile-container{
+    margin-top: 80px;
+}
+
+.name-tag, .number-tag, .email-tag{
+    text-decoration: underline;
+    display: block;
+    text-align: left;
+}
+
+.name-input, .number-input, .email-input{
+    width:50%;
+    display: block;
+    margin: auto;
+}
+
+.edit-button{
+    width:30%;
+    display: block;
+    margin: auto;
+}
+
+::placeholder{
+    color: black;
+
+}
+
+/*dropdown css*/
+
+/* Dropdown button styles */
+#dropbtn {
+    background-color: white;
+    color: rgba(23, 104, 110, 0.381);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    margin-top:-22px;
+  }
+
+  
+  /* Dropdown content (hidden by default) */
+  .dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0; /* Align left with the button */
+    margin-left:1160px;
+    margin-top:20px;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: rgba(79, 171, 177, 0.64);
+  }
+  
+  /* Show the dropdown menu when the button is clicked */
+  .dropdown.show .dropdown-content {
+    display: block;
+  }
+  

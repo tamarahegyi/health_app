@@ -5,6 +5,7 @@ import './members.css';
 
 const Members = () => {
   const [userName, setUserName] = useState("");
+  const [isOpen, setIsOpen]= useState(false);
 
   useEffect(() => {
     const localUsers = JSON.parse(localStorage.getItem("users")) || {};
@@ -18,6 +19,9 @@ const Members = () => {
     localStorage.removeItem("signUp");
     window.location.reload();
   };
+  const toggleDowpdown =()=>{
+    setIsOpen(!isOpen);
+  }
 
   {/* This is a function for the future to be able to delete the current user's account 
     const deleteAccount = () => {
@@ -43,7 +47,13 @@ const Members = () => {
             <a className="health-blog" href="#">Health Blog <i className="fa fa-users" aria-hidden="true"></i></a>
             <a className="reviews" href="/ReviewForm">Reviews <i className="fa fa-book" aria-hidden="true"></i></a>
             <a href="./basicLogin"><button className="login" type="button" onClick={logout}>Log out</button></a>
-            <button className="signup" type="button">Your Profile</button> {/* This button has no function yet*/}
+            <div className="dropdown"><button onClick={toggleDowpdown} className="signup" id="dropbtn">Your Profile</button></div>
+              {isOpen && (
+              <div className="dropdown-content">
+                <a href="./ProfileCard">Your Profile</a>
+                <a href="./ReportLayout">Your Reports</a>
+              </div>
+              )}
           </nav>
         </section>
 

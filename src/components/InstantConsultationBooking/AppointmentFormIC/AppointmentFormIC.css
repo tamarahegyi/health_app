@@ -48,21 +48,24 @@
     margin: 5px 0;
   }
   
-  .Cancel-button {
+  .Cancel-button2 {
     background: #ff4d4d;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    text-align: center;
   }
   
-  .Cancel-button:hover {
+  .Cancel-button2:hover {
     background: #ff1a1a;
   }
-  .Cancel-button{
+  .Cancel-button2{
     display: block;
     margin: auto;
+    width:100%;
+    text-align: center;
   }
   .appointments1{
     color:rgb(3, 3, 62);
@@ -71,5 +74,9 @@
   }
   .appointments:hover{
     color:darkgrey;
+  }
+
+  #role1, #name1, #date1, #time1, #number1{
+    color:rgba(10, 101, 107, 1);
   }
   
