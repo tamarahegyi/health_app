@@ -26,7 +26,8 @@ function App() {
           <FontAwesomeIcon/>
           <Notification>
           <Routes>
-          <Route path="/NavBar" element={<Navbar />} />
+          <Route path="/" element={<Navbar />} />
+          <Route path="Navbar" element={<Navbar/>}/>
           <Route path="/Login" element={<Login />} />
           <Route path="/SignUp" element ={<SignUp/>}/>
           <Route path="/members" element={<Members/>}/>
