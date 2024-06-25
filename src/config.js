@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:3000/SignUp';
+export const API_URL = window.location.origin;

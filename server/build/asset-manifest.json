@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.49accf60.css",
+    "main.js": "/static/js/main.fbcd6919.js",
+    "static/js/453.bff53814.chunk.js": "/static/js/453.bff53814.chunk.js",
+    "static/media/ReportDocument.pdf": "/static/media/ReportDocument.84442f19cdf2cfc7d9b7.pdf",
+    "index.html": "/index.html",
+    "main.49accf60.css.map": "/static/css/main.49accf60.css.map",
+    "main.fbcd6919.js.map": "/static/js/main.fbcd6919.js.map",
+    "453.bff53814.chunk.js.map": "/static/js/453.bff53814.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49accf60.css",
+    "static/js/main.fbcd6919.js"
+  ]
+}
