@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './ReportLayout.css';
+import ReportDocument from '../Reports/ReportDocument.pdf'
 
 const ReportLayout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,9 +62,9 @@ const ReportLayout = ({ children }) => {
         {children}
         <div className="report-table">
           <section className='report-section'>
-            <p>Reports</p>
+            <p className='report-tag'>Reports</p>
             <table className='booking-table'>
-              <thead>
+              <thead className='table-head'>
                 <tr>
                   <th>Doctor Name</th>
                   <th>Doctor Speciality</th>
@@ -78,13 +79,13 @@ const ReportLayout = ({ children }) => {
                       <td>{appointment.doctorName}</td>
                       <td>{appointment.doctorSpeciality}</td>
                       <td>
-                        <a href={`/reports/Report.jpg`} target="_blank" rel="noopener noreferrer">
-                          View report
+                        <a href={ReportDocument} target="_blank" rel="noopener noreferrer">
+                         <button className='view-report'>  View report</button>
                         </a>
                       </td>
                       <td>
-                        <a href={`/reports/Report.jpg`} download>
-                          Download Report
+                        <a href={ReportDocument} download target="_blank" rel="noopener noreferrer">
+                          <button className='download-report'>Download Report</button>
                         </a>
                       </td>
                     </tr>
@@ -93,8 +94,8 @@ const ReportLayout = ({ children }) => {
                   <tr>
                     <td></td>
                     <td></td>
-                    <td><button>View report</button></td>
-                    <td><button>Download Report</button></td>
+                    <td className='noreports'>You have no recent reports</td>
+                    <td>You have no recent reports</td>
                   </tr>
                 )}
               </tbody>

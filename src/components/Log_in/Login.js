@@ -23,13 +23,26 @@ const ProfileForm = () => {
   }, []);
 
   const editDetails = () => {
-    if (loggedInUser) {
+    if (validateInputs()) {
       const users = JSON.parse(localStorage.getItem('users')) || {};
       users[loggedInUser] = { name: userName, email: userEmail, phone: userPhone };
       localStorage.setItem('users', JSON.stringify(users));
       console.log('User details updated:', users[loggedInUser]);
       navigate("/success"); // Navigate to the success page
     }
+  };
+
+    const validateInputs = () => {
+    const name = userName;
+    const email = userEmail;
+    const phone = userPhone;
+    const phonePattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!name || !phone.match(phonePattern) || !email.match(emailPattern)) {
+      alert("Please enter valid details. Phone: 123-456-7890, Email: example@example.com");
+      return false;
+    }
+    return true;
   };
 
   const logout = () => {
@@ -57,7 +70,7 @@ const ProfileForm = () => {
               {isOpen && (
               <div className="dropdown-content">
                 <a href="./ProfileCard">Your Profile</a>
-                <a href="/ReportLayout">Your Reports</a>
+                <a href="./ReportLayout">Your Reports</a>
               </div>
               )}
             </nav>
@@ -74,7 +87,7 @@ const ProfileForm = () => {
           type="text"
           className="name-input"
           value={userName}
-          placeholder="Enter your name"
+          placeholder={userName}
           onChange={(e) => setUserName(e.target.value)}
         />
         <br />
@@ -88,7 +101,7 @@ const ProfileForm = () => {
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           title="Enter 10 numbers between 0-9. 123-456-7890"
           value={userPhone}
-          placeholder="Enter your phone number"
+          placeholder={userPhone}
           onChange={(e) => setUserPhone(e.target.value)}
         />
         <br />
@@ -100,7 +113,7 @@ const ProfileForm = () => {
           type="email"
           className="email-input"
           value={userEmail}
-          placeholder="Enter your email"
+          placeholder={userEmail}
           onChange={(e) => setUserEmail(e.target.value)}
         />
         <br />

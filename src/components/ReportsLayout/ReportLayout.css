@@ -23,4 +23,9 @@
 
 .table-head{
     text-decoration:underline;
+    margin-bottom: 20px;
+}
+.no-reports{
+    margin-top: 20px;
+    text-align: center;
 }
